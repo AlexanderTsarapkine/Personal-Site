@@ -8,18 +8,18 @@ document.getElementById('devButton').addEventListener('click', function() {
     homePageButtonContainer.classList.add('hidden');
     setTimeout(function() {
         cubeContainer.classList.add('active');
+
+        const audio = new Audio('/audio/concreteScrape.mp3');
+        audio.play().catch(error => console.log('Audio playback failed:', error));
+
         setTimeout(function() {
             window.location.href = '/dumpster';
-        }, 5000);
+        }, 4000);
     }, 1);
 });
 
 document.getElementById('hrButton').addEventListener('click', function() {
-    if (resumeSliderContainer.classList.contains('collapsed')) {
-        resumeSliderContainer.classList.remove('collapsed');
-    } else {
-        resumeSliderContainer.classList.add('collapsed');
-    }
+    resumeSliderContainer.classList.toggle('collapsed');
 });
 
 document.getElementById('collapse-button').addEventListener('click', function() {
