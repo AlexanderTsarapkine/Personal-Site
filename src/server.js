@@ -12,8 +12,12 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
+app.get('/dumpster', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'aboutMe.html'));
+});
+
 app.all('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', '404.html'));
+  res.redirect('/');
 });
 
 // Use constants for settings, e.g., PORT

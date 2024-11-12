@@ -8,6 +8,9 @@ document.getElementById('devButton').addEventListener('click', function() {
     homePageButtonContainer.classList.add('hidden');
     setTimeout(function() {
         cubeContainer.classList.add('active');
+        setTimeout(function() {
+            window.location.href = '/dumpster';
+        }, 5000);
     }, 1);
 });
 
