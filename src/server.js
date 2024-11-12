@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
-const constants = require('./config/constants'); // Import constants
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
+const baseUrl = process.env.BASE_URL;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -20,5 +22,8 @@ app.all('*', (req, res) => {
   res.redirect('/');
 });
 
-// Use constants for settings, e.g., PORT
-app.listen(constants.PORT, () => console.log(`Server running on http://localhost:${constants.PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server running on ${baseUrl}:${PORT}`);
+}).on('error', (err) => {
+  console.error('Server failed to start:', err);
+});
