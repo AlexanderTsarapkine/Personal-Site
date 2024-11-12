@@ -9,11 +9,11 @@ document.getElementById('devButton').addEventListener('click', function() {
     setTimeout(function() {
         cubeContainer.classList.add('active');
 
-        const audio = new Audio('/audio/concreteScrape.mp3');
+        const audio = new Audio('audio/concreteScrape.mp3');
         audio.play().catch(error => console.log('Audio playback failed:', error));
 
         setTimeout(function() {
-            window.location.href = '/dumpster';
+            window.location.href = 'aboutMe.html';
         }, 4000);
     }, 1);
 });

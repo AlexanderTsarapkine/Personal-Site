@@ -5,13 +5,13 @@ let returnContainer = document.getElementById('return-container');
 const isBackNavigation = performance.getEntriesByType("navigation")[0].type === "back_forward";
 
 const playBoom = () => {
-    const audio = new Audio('/audio/vineBoom.mp3');
+    const audio = new Audio('audio/vineBoom.mp3');
     audio.play().catch(error => console.log('Audio playback failed:', error));
 };
 
 document.body.addEventListener('click', function(e) {
     const gif = document.createElement('img');
-    gif.src = '/images/explosion.gif';
+    gif.src = 'images/explosion.gif';
     gif.className = 'click-gif';
     gif.style.left = e.pageX + 'px';
     gif.style.top = e.pageY + 'px';
@@ -26,10 +26,10 @@ document.body.addEventListener('click', function(e) {
 
 const handleResume = () => {
     if (resumeSliderContainer.classList.contains('collapsed')) {
-        const audio = new Audio('/audio/slideWhistleUp.mp3');
+        const audio = new Audio('audio/slideWhistleUp.mp3');
         audio.play().catch(error => console.log('Audio playback failed:', error));
     } else{
-        const audio = new Audio('/audio/slideWhistleDown.mp3');
+        const audio = new Audio('audio/slideWhistleDown.mp3');
         audio.play().catch(error => console.log('Audio playback failed:', error));
     }
 
@@ -51,7 +51,7 @@ document.getElementById('return-button').addEventListener('click', function() {
     returnContainer.classList.add('active');
 
     setTimeout(() => {
-        window.location.href = '/';
+        window.location.href = 'index.html';
     }, 500);
 });
 
